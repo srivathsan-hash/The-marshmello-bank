@@ -1,74 +1,75 @@
 h1{
-		color: #f2e9e4;
-	font-family: 'Oxygen', sans-serif;
+    color: #f2e9e4;
+font-family: 'Oxygen', sans-serif;
 }
 body{
-	background:url(https://images.freecreatives.com/wp-content/uploads/2015/04/dark-purple-speckled-paper-texture.jpg);
+background:url(https://wallpapercave.com/wp/2nec57u.jpg);
 }
 .footer{
-    font-family: 'Courgette', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(0, 132, 255);
-    padding: 0.1%;
-    bottom: 0px;
+font-family: 'Courgette', cursive;
+font-size: 30px;
+font-weight: bold;
+color: rgb(103, 34, 167);
+padding: 0.1%;
+bottom: 0px;
+}
+.headernav{
+    background-color: rgb(219, 124, 0)
 }
 a.imagelink{
-	text-decoration: none;
-	}
+text-decoration: none;
+}
 .marq marquee
-	{
-		color: white;
-		font-size: 40px;
-		font-family: 'Righteous', cursive;
-	}  
-	
+{
+    color: rgb(5, 5, 5);
+    font-size: 30px;
+    font-family: 'Righteous', cursive;
+}
 button{
-		border:none;
-		border-radius: 8px;
-		padding: 14px;
-		background:#7B8788; 
-		color:white;
-		letter-spacing: 2px;
-		font-size: 16px;
-		transition: 0.5s;
-	}
-	
+    border:none;
+    border-radius: 8px;
+    padding: 14px;
+    background:#7B8788; 
+    color:white;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
 button:hover{
-		transform: scale(1.1);
-		background-color:rgb(72, 184, 21);
-	}
-	
+    transform: scale(1.1);
+    background-color:rgb(72, 184, 21);
+}
+
 .c1{
-		border:none;
-		border-radius: 8px;
-		padding: 14px;
-		background: rgb(206, 129, 13); 
-		color:black;
-		letter-spacing: 2px;
-		font-size: 16px;
-		transition: 0.5s;
-	}
-	
+    border:none;
+    border-radius: 8px;
+    padding: 14px;
+    background: rgb(206, 129, 13); 
+    color:black;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
 .c2{
-		border:none;
-		border-radius: 8px;
-		padding: 14px;
-		background: rgb(76, 0, 255); 
-		color:black;
-		letter-spacing: 2px;
-		font-size: 16px;
-		transition: 0.5s;
-	}
-	
+    border:none;
+    border-radius: 8px;
+    padding: 14px;
+    background: rgb(76, 0, 255); 
+    color:black;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
 .c3{
-		border:none;
-		border-radius: 8px;
-		padding: 14px;
-		background: rgb(18, 141, 125); 
-		color:#e6e7e8;
-		letter-spacing: 2px;
-		font-size: 16px;
-		transition: 0.5s;
-	}
-	
+    border:none;
+    border-radius: 8px;
+    padding: 14px;
+    background: rgb(18, 141, 125); 
+    color:#e6e7e8;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+}

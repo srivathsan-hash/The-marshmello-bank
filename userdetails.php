@@ -6,11 +6,11 @@
         $to = $_POST['to'];
         $amount = $_POST['amount'];
 
-        $sql = "SELECT * from marshmello where serial no=$from";
+        $sql = "SELECT * from marshmello where serialno =$from";
         $query = mysqli_query($conn,$sql);
         $sql1 = mysqli_fetch_array($query); 
 
-        $sql = "SELECT * from marshmello where serial no=$to";
+        $sql = "SELECT * from marshmello where serialno =$to";
         $query = mysqli_query($conn,$sql);
         $sql2 = mysqli_fetch_array($query);
 
@@ -44,19 +44,18 @@
         {
             // amount deduction from sender's account
             $newbalance = $sql1['Balance'] - $amount;
-            $sql = "UPDATE marshmello set Balance=$newbalance where serial no=$from";
+            $sql = "UPDATE marshmello set Balance=$newbalance where serialno=$from";
             mysqli_query($conn,$sql);
             
             // adding amount to reciever's account
             $newbalance = $sql2['Balance'] + $amount;
-            $sql = "UPDATE marshmello set balance=$newbalance where serial no=$to";
+            $sql = "UPDATE marshmello set balance=$newbalance where serialno=$to";
             mysqli_query($conn,$sql);
                 
             $sender = $sql1['Name'];
             $receiver = $sql2['Name'];
-            $sql = "INSERT INTO `transaction` (`Sender`, `Receiver`, `Amount`) VALUES ('$sender', '$receiver', '$amount')";
+            $sql = "INSERT INTO `transaction` (`Sender`, `Reciever`, `Amount`) VALUES ('$sender', '$receiver', '$amount')";
             $query = mysqli_query($conn, $sql);
-        
             if ($query) {
               echo "<script> alert('Transaction Successful');
                      window.location='Transaction.php';
@@ -98,7 +97,7 @@
 <style>
          table{
                 text-align: center;
-                border:3px solid black;
+                border:3px solid white;
                 border-collapse: collapse;
                 width: 100%;
                 height: 90px;
@@ -106,7 +105,7 @@
 
             th{
                 border-collapse: collapse;
-                border: 2px solid black;
+                border: 2px solid white;
                 font-family: 'Oxygen', serif;
                 font-weight: 35px;
                 font-size: 25px;
@@ -117,7 +116,7 @@
     
              td{
                 border-collapse: collapse;
-                border: 2px solid white;
+                border: 2px solid black;
                 width: 60px;
                 height: 45px;
                 font-size:20px;
@@ -131,14 +130,18 @@
                 background-color: #00ff80;
             }
             .tabdat{
-                background-color: black;
-                color: white;
+                background-color: white;
+                color: black;
                 font-weight: bold;
+            }
+            h1{
+              color: black;
+
             }
         </style>
 </head>
 <body>
-  <header class="p-3 bg-danger text-white">
+  <header class="headernav">
     <div class="container-fluid">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
@@ -162,7 +165,7 @@
         </div>
         </header>
         <div class="marq">
-          <marquee direction="left" scrolldelay=1>WELCOME TO THE MARSHMELLO BANK </marquee>
+          <marquee direction="left" scrolldelay=1>welcome to marshmello bank customer satisfaction is our  priority </marquee>
       </div><br>
  <!--Php Config-->
  <?php
@@ -181,7 +184,7 @@
                 <?php
                     include 'configuration.php';
                     $sid=$_GET['id'];
-                    $sql = "SELECT * FROM  marshmello where serial no=$sid";
+                    $sql = "SELECT * FROM  marshmello where serialno =$sid";
                     $result=mysqli_query($conn,$sql);
                     if(!$result)
                     {
@@ -201,19 +204,19 @@
                         <tr style="text-align : center" class="table-dark">                        
                             <td class="table-dark"><?php echo $rows['Name']?></td>
                             <td class="table-dark"><?php echo $rows['Email id']?></td>                        
-                            <td class="table-dark"><?php echo $rows['Ealance']?></td>
+                            <td class="table-dark"><?php echo $rows['Balance']?></td>
                         </tr>
                     </table>
                 </div>
                 <br><br><br>
-                <label style="color : white;"><b>Transfer To:</b></label>
+                <label style="color : black;"><b>Transfer To:</b></label>
                 <select name="to" class="form-control" required>
                     <option value="" disabled selected>Choose</option>
 
                     <?php
                         include 'configuration.php';
                         $sid=$_GET['id'];
-                        $sql = "SELECT * FROM marshmello where serial no!=$sid";
+                        $sql = "SELECT * FROM marshmello where serialno!=$sid";
                         $result=mysqli_query($conn,$sql);
                         if(!$result)
                         {
@@ -222,7 +225,7 @@
                         while($rows = mysqli_fetch_assoc($result)) {
                     ?>
             
-                    <option class="table" value="<?php echo $rows['serial no'];?>" >
+                    <option class="table" value="<?php echo $rows['serialno'];?>" >
                         <?php echo $rows['Name'] ;?> - Balance: 
                         <?php echo $rows['Balance'] ;?>  
                     </option>
@@ -233,11 +236,11 @@
                 </select>
                 <br>
                         
-                <label style="color : white;"><b>Amount:</b></label>
+                <label style="color : black;"><b>Amount:</b></label>
                     <input type="text" class="form-control" name="amount" required>   
                     <br><br>
                 <div class="text-center" >
-                    <button class="btn btn-outline-warning" name="submit" type="submit" id="myBtn" >Transfer</button>
+                    <button class="btn btn-outline-info" name="submit" type="submit" id="myBtn" >Transfer</button>
                 </div>
             </form>
         </div>
@@ -249,14 +252,14 @@
         <div id="contact">      
           <div class="container">
             <p class="float-end mb-1">
-               Contact Me ON: &nbsp;
+               Contact me on: &nbsp;
                 <a class="imagelink" href="mailto:srivathsan008@gmail.com" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="40" height="40">
                 </a>
                <a class="imagelink" href="https://www.linkedin.com/in/srivathsan-s-486334213/" target="_blank">
                   <img src="images/linkedin.png" width=55 height=50 alt=" linkedin profile link"> 
                </a>
-               <a class="imagelink" href="https://github.com/vishnu1881/" target="_blank">
+               <a class="imagelink" href="https://github.com/srivathsan-hash" target="_blank">
                  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=40 height=40 alt="GitHub profile link">
                </a>
             </p>

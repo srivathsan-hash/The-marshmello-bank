@@ -26,7 +26,7 @@
 <style>
          table{
                 text-align: center;
-                border:3px solid black;
+                border:3px solid white;
                 border-collapse: collapse;
                 width: 100%;
                 height: 90px;
@@ -34,7 +34,7 @@
 
             th{
                 border-collapse: collapse;
-                border: 2px solid black;
+                border: 2px solid white;
                 font-family: 'Oxygen', serif;
                 font-weight: 35px;
                 font-size: 25px;
@@ -45,7 +45,7 @@
     
              td{
                 border-collapse: collapse;
-                border: 2px solid white;
+                border: 2px solid black;
                 width: 60px;
                 height: 45px;
                 font-size:20px;
@@ -59,14 +59,18 @@
                 background-color: #00ff80;
             }
             .tabdat{
-                background-color: black;
-                color: white;
+                background-color: white;
+                color: black;
                 font-weight: bold;
+            }
+            h1{
+              color: black;
+
             }
         </style>
 </head>
 <body>
-  <header class="p-3 bg-danger text-white">
+  <header class="headernav">
     <div class="container-fluid">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
@@ -83,14 +87,14 @@
           </ul>
     
           <div class="col-md-3 text-end">
-            <a href="custumer.php">
+            <a href="costumer.php">
             <button type="button" class="btn btn-outline-info me-2">Transfer</button>
           </a> 
           </div>
         </div>
         </header>
         <div class="marq">
-          <marquee direction="left" scrolldelay=1>WELCOME TO THE MARSHMELLO BANK </marquee>
+          <marquee direction="left" scrolldelay=1>welcome to marshmello bank customer satisfaction is our  priority </marquee>
       </div><br>
       <!--Php Config-->
       <?php
@@ -111,7 +115,7 @@
                     <thead style="color : white;" class="table-secondary">
                         <tr>
                             <th class="text-center">Sender</th>
-                            <th class="text-center">Receiver</th>
+                            <th class="text-center">Reciever</th>
                             <th class="text-center">Amount</th>
                             <th class="text-center">Date & Time</th>
                         </tr>
@@ -128,7 +132,7 @@
 
                         <tr style="color : black;" class="table-dark">
                             <td class="table-dark"><?php echo $rows['Sender']; ?></td>
-                            <td class="table-dark"><?php echo $rows['Receiver']; ?></td>
+                            <td class="table-dark"><?php echo $rows['Reciever']; ?></td>
                             <td class="table-dark"><?php echo $rows['Amount']; ?> </td>
                             <td class="table-dark"><?php echo $rows['Date and time']; ?> </td>
                         </tr>
@@ -149,14 +153,14 @@
         <div id="contact">      
           <div class="container">
             <p class="float-end mb-1">
-               Contact Me ON: &nbsp;
+               Contact me on: &nbsp;
                 <a class="imagelink" href="mailto:srivathsan008@gmail.com" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="40" height="40">
                 </a>
                <a class="imagelink" href="https://www.linkedin.com/in/srivathsan-s-486334213/" target="_blank">
                   <img src="images/linkedin.png" width=55 height=50 alt=" linkedin profile link"> 
                </a>
-               <a class="imagelink" href="https://github.com/vishnu1881/" target="_blank">
+               <a class="imagelink" href="https://github.com/srivathsan-hash" target="_blank">
                  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=40 height=40 alt="GitHub profile link">
                </a>
             </p>
